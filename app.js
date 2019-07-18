@@ -10,8 +10,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/', (req, res, next) => {
-  console.log('Requests received:')
-  console.log(JSON.stringify(req.body, null, 2))
+  console.log('Request received.')
+
+  if (req.body) console.log('body: ', JSON.stringify(req.body, null, 2))
+  if (req.query) console.log('query:', JSON.stringify(req.query, null, 2))
 
   res.json({
     ok: true,
