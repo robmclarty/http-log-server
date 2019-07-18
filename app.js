@@ -18,3 +18,5 @@ app.use('/', (req, res, next) => {
     message: 'Request received.'
   })
 })
+
+module.exports = app
